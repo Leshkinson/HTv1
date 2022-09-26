@@ -2,11 +2,13 @@ import {Router} from "express";
 import {VideoController} from "../controller/controller";
 export const router = Router();
 
-const videoController = new VideoController();
 
-router.get('/videos', videoController.getAllVideos)
-    .post('/videos', videoController.createVideo);
 
-router.get('/videos/:id', videoController.getVideo.bind(videoController))
-    .put('/videos/:id', videoController.updateVideo.bind(videoController))
-    .delete('/videos/:id', videoController.deleteVideo.bind(videoController));
+router.delete('testing/all-data', VideoController.testingDelete)
+
+router.get('/videos', VideoController.getAllVideos)
+    .post('/videos', VideoController.createVideo);
+
+router.get('/videos/:id', VideoController.getVideo)
+    .put('/videos/:id', VideoController.updateVideo)
+    .delete('/videos/:id', VideoController.deleteVideo);

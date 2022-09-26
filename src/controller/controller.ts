@@ -3,7 +3,12 @@ import {VideoServices} from "../service/service";
 
 
 export class VideoController {
-    public getAllVideos(req: Request, res: Response) {
+    static testingDelete(req: Request, res: Response) {
+        VideoServices.testing()
+        res.sendStatus(404)
+    }
+
+    static getAllVideos(req: Request, res: Response) {
         try {
             const videos = VideoServices.get()
             res.status(200).json(videos)
@@ -12,7 +17,7 @@ export class VideoController {
         }
     }
 
-    public createVideo(req: Request, res: Response, next: NextFunction) {
+    static createVideo(req: Request, res: Response, next: NextFunction) {
         try {
             const newVideo = VideoServices.create(req.body.title, req.body.title)
             res.status(201).send(newVideo)
@@ -21,7 +26,7 @@ export class VideoController {
         }
     }
 
-    public getVideo(req: Request, res: Response, next: NextFunction) {
+    static getVideo(req: Request, res: Response, next: NextFunction) {
         try {
             const video = VideoServices.find(+req.params.id);
             return  res.status(200).json(video)
@@ -30,7 +35,7 @@ export class VideoController {
         }
     }
 
-    public updateVideo(req: Request, res: Response, next: NextFunction) {
+    static updateVideo(req: Request, res: Response, next: NextFunction) {
         try {
             const updateVideo = VideoServices.find(+req.params.id)
             if (updateVideo) {
@@ -43,7 +48,7 @@ export class VideoController {
         }
     }
 
-    public deleteVideo(req: Request, res: Response, next: NextFunction) {
+    static deleteVideo(req: Request, res: Response, next: NextFunction) {
         try {
             const deleteVideo = VideoServices.find(+req.params.id)
             if (deleteVideo) {

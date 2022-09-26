@@ -15,6 +15,11 @@ interface Videos {
 }
 
 export class VideoServices {
+
+    static testing() {
+        return videos.length = 0
+    }
+
     static get() {
         return videos
     }
