@@ -4,8 +4,11 @@ import {VideoServices} from "../service/service";
 
 export class VideoController {
     static testingDelete(req: Request, res: Response) {
-        VideoServices.testing()
-        res.sendStatus(404)
+        try {
+            return res.sendStatus(204)
+        } catch (e) {
+            console.log(e)
+        }
     }
 
     static getAllVideos(req: Request, res: Response) {

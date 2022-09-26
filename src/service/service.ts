@@ -1,8 +1,6 @@
 import {videos} from "../repository/videos";
 import {ValidationError} from "../error/error";
 
-
-
 interface Videos {
     id: number,
     title: string,
@@ -17,7 +15,9 @@ interface Videos {
 export class VideoServices {
 
     static testing() {
-        return videos.length = 0
+        const data = videos
+        data.length = 0
+        return data
     }
 
     static get() {

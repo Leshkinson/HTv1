@@ -4,7 +4,7 @@ export const router = Router();
 
 
 
-router.delete('testing/all-data', VideoController.testingDelete)
+router.delete('/testing/all-data', VideoController.testingDelete)
 
 router.get('/videos', VideoController.getAllVideos)
     .post('/videos', VideoController.createVideo);

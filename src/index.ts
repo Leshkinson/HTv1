@@ -3,7 +3,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import {router} from "./router";
 import {errorMiddleware} from './middleware/error-middleware'
-const PORT = process.env.PORT || 4546
+const PORT = process.env.PORT || 4547;
 const app = express()
 
 app.use(bodyParser.json());
