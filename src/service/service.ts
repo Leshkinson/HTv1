@@ -15,9 +15,8 @@ interface Videos {
 export class VideoServices {
 
     static testing() {
-        const data = videos
-        data.length = 0
-        return data
+        videos.length = 0
+        return videos
     }
 
     static get() {

@@ -10,7 +10,6 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use('/api', router);
-// @ts-ignore
 app.use(errorMiddleware);
 
 const startAPP = () => {

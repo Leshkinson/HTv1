@@ -23,7 +23,7 @@ export class VideoController {
     static createVideo(req: Request, res: Response, next: NextFunction) {
         try {
             const newVideo = VideoServices.create(req.body.title, req.body.title)
-            res.status(201).send(newVideo)
+            res.status(201).json(newVideo)
         } catch (e) {
             next(e)
         }
